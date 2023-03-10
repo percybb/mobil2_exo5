@@ -23,7 +23,13 @@ class Termometro(context: Context, temp: Float) : View(context) {
 
         val p1 = Paint()
         p1.strokeWidth=5.0f
-        p1.setColor(Color.rgb(255,0,0))
+        //p1.setColor(Color.rgb(255,0,0))
+        //pinceau.setColor(Color.rgb(255,0,0));
+        if (tempe > 15) {
+            p1.setColor(Color.rgb(255, 255 -  (2 * tempe + 55).toInt(), 255 - (2 * tempe + 55).toInt()))
+        } else {
+            p1.setColor(Color.rgb(255 - (-3 * tempe + 105).toInt(), 255 - (-3 * tempe + 105).toInt(), 255))
+        }
 
         val p2 = Paint()
         p2.color = Color.rgb(0, 0, 0)
